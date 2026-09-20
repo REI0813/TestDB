@@ -19,8 +19,7 @@ public class TestUserDAO {
 
         try {
 
-            PreparedStatement ps =
-                    con.prepareStatement(sql);
+            PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, name);
             ps.setString(2, password);
@@ -29,44 +28,57 @@ public class TestUserDAO {
 
             if (rs.next()) {
 
-                System.out.println(
-                        rs.getString("user_name"));
-
-                System.out.println(
-                        rs.getString("password"));
+                System.out.println(rs.getString("user_name"));
+                System.out.println(rs.getString("password"));
             }
 
         } catch (SQLException e) {
+
             e.printStackTrace();
         }
 
         try {
+
             con.close();
+
         } catch (SQLException e) {
+
             e.printStackTrace();
         }
     }
-    
+
     public void selectAll() {
-    	
-    	DBConnector db = new DBConnector();
-    	Connection con = db.getConnection();
-    	
-    	String sql ="select * from test_table";
-    	try {
-    		PreparedStatement ps = con.prepareStatement(sql);
-    		ResultSet rs=ps.executeQuery();
-    		
-    		while (rs.next()) {
-    			System.out.println(rs.getString("user_name"));
-    			System.out.println(rs.getString("password"));
-    		}
-    	} catch (SQLException e ) {
-    	e.printStackTrace();
-    	} try {
-    	con.close() ;
-    	} catch (SQLException e ) {
-    	e.printStackTrace();
-    	}
-    }    
+
+        DBConnector db = new DBConnector();
+
+        Connection con = db.getConnection();
+
+        String sql = "select * from test_table";
+
+        try {
+
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                System.out.println(rs.getString("user_name"));
+                System.out.println(rs.getString("password"));
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        try {
+
+            con.close();
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+    }
 }
