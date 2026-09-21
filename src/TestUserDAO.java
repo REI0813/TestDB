@@ -8,6 +8,7 @@ public class TestUserDAO {
     String name = "";
     String password = "";
 
+   //名前とPWで取得
     public void select(String name, String password) {
 
         DBConnector db = new DBConnector();
@@ -47,6 +48,7 @@ public class TestUserDAO {
         }
     }
 
+    //全件取得
     public void selectAll() {
 
         DBConnector db = new DBConnector();
@@ -82,6 +84,8 @@ public class TestUserDAO {
         }
     }
     
+    
+    //名前で取得
     public void selectByName(String name) {
 
         DBConnector db = new DBConnector();
@@ -120,6 +124,8 @@ public class TestUserDAO {
         }
     }
     
+    
+    //パスワードで取得
     public void selectByPassword(String password) {
 
         DBConnector db = new DBConnector();
@@ -158,6 +164,7 @@ public class TestUserDAO {
         }
     }
     
+    //名前で更新
     public void updateUserNameByUserName(String oldName, String newName) {
 
         DBConnector db = new DBConnector();
@@ -200,6 +207,7 @@ public class TestUserDAO {
         }
     }
     
+    //idと名前とパスワードで登録
     public void insert(int user_id,String name, String password) {
     	
     	DBConnector db = new DBConnector();
@@ -239,6 +247,8 @@ public class TestUserDAO {
     	}
     }
     
+    
+    //名前で削除
     public void delete(String name) {
 
         DBConnector db = new DBConnector();
